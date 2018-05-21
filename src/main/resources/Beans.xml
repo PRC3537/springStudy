@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="helloWorld" class="com.hello.webserver.controller.HelloController">
+    <!--init-method="init" destroy-method="destroy">-->
+        <property name="message1" value="Hello World!"/>
+        <property name="message2" value="Hello World agin!" />
+    </bean>
+
+    <bean id="helloIndia" class="com.hello.webserver.controller.HelloIndia" parent="helloWorld">
+        <!--传递值，用value-->
+        <property name="message1" value="Hello India!" />
+        <property name="message3" value="Namaste India!"/>
+    </bean>
+
+    <!--<bean class="com.hello.webserver.controller.InitHelloController" />-->
+    <!-- Definition for textEditor bean -->
+    <bean id="textEditor" class="com.hello.webserver.controller.TextEditor">
+        <!--注入构造函数，传递引用，用ref-->
+        <!--<constructor-arg ref="spellChecker"/>-->
+        <!--注入设值函数，传递引用-->
+        <!--<property name="spellChecker" ref="spellChecker"/>-->
+        <property name="spellChecker">
+            <bean id="spellChecker" class="com.hello.webserver.controller.SpellChecker"/>
+        </property>
+
+    </bean>
+    <!-- Definition for spellChecker bean -->
+    <!--<bean id="spellChecker" class="com.hello.webserver.controller.SpellChecker"/>-->
+
+</beans>
