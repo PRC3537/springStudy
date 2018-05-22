@@ -4,6 +4,7 @@ import com.hello.webserver.controller.SpellChecker;
 
 public class TextEditor {
     private SpellChecker spellChecker;
+    private String name;
 //    public TextEditor(SpellChecker spellChecker){
 //        System.out.println("Inside TextEditor constructor.");
 //        this.spellChecker = spellChecker;
@@ -18,6 +19,15 @@ public class TextEditor {
     //a getter method to return spellChecker
     public SpellChecker getSpellChecker(){
         return spellChecker;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        System.out.println("name : " + name);
+        return name;
     }
 
     public void spellCheck(){

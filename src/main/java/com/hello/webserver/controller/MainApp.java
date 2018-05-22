@@ -31,6 +31,11 @@ public class MainApp {
 //        objA.getMessage();
 //        HelloController objB = (HelloController) context.getBean("helloWorld");
 //        objB.getMessage();
+        JavaCollection jc = (JavaCollection)context.getBean("javaCollection");
+        jc.getAddressList();
+        jc.getAddressSet();
+        jc.getAddressMap();
+        jc.getAddressProp();
 
 
     }
